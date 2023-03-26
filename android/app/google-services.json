@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "429613969087",
+    "project_id": "saloon-e405e",
+    "storage_bucket": "saloon-e405e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429613969087:android:9a301de2ddb41f0933200a",
+        "android_client_info": {
+          "package_name": "com.example.saloon_booking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429613969087-svbrjtadpc14pgtv32db0m9glot6alkp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWZqCuzTikC6EVCGKX2NY_JNDTPZgwj10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429613969087-svbrjtadpc14pgtv32db0m9glot6alkp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
