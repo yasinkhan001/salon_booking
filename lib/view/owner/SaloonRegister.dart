@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:saloon_booking/colors/colors.dart';
+import 'package:saloon_booking/view/owner/Components/services_fields.dart';
+import 'package:saloon_booking/view/owner/Components/services_view.dart';
 
 class SaloonRegister extends StatefulWidget {
   const SaloonRegister({Key? key}) : super(key: key);
@@ -12,6 +14,8 @@ class SaloonRegister extends StatefulWidget {
 final _formKey = GlobalKey<FormBuilderState>();
 
 class _SaloonRegisterState extends State<SaloonRegister> {
+  List<Map<String, dynamic>> services = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +32,7 @@ class _SaloonRegisterState extends State<SaloonRegister> {
               padding: const EdgeInsets.all(25.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
                     "Register as a salon owner",
@@ -109,6 +114,43 @@ class _SaloonRegisterState extends State<SaloonRegister> {
                     // ],
                     // name: '',
                   ),
+                  const SizedBox(
+                    height: 14,
+                  ),
+
+                  ///TODO: SERVICES
+                  MaterialButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) =>
+                              ServicesFields(onChange: (service) {
+                                setState(() {
+                                  services.add(service);
+                                });
+                              }));
+                    },
+                    color: mainColor,
+                    child: const Text(
+                      "Add services",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      for (var i = 0; i < services.length; i++)
+                        ServiceView(
+                          onRemove: () {
+                            setState(() {
+                              services.removeAt(i);
+                            });
+                          },
+                          serviceName: services[i]["service"],
+                          servicePrice: services[i]["price"],
+                        ),
+                    ],
+                  ),
+
                   const SizedBox(
                     height: 14,
                   ),
